@@ -1,0 +1,15 @@
+﻿<doc>
+  <style name="Black" color="Black" />
+  <style name="Yellow" color="lightblue"/>
+  <style name="Green" color="Green"/>
+  <style name="Red" color="Red" />
+  <style name="RedBold" color="Red" fontStyle="Bold" />
+  <rule style="RedBold">(?i)\^XA|\^XZ</rule>
+  <rule style="Red">(\^FD)([\s\S]+?)(\^FS)</rule>
+  <rule style="Yellow">\^FO|\^A|\^FS|\^GB|\^BY|\^FD|\^FT|\^FX|\^FV|\^FB|\^BC|\^GC|\^BC|\^BC|\^BC|\^BC|\^GF|\^MN|\^MC|\^MF\|^DN\|^LR</rule>
+  <rule style="Yellow">\^LH|\^FW|\^MD|\^PW|\^PO|\^CI|\^PR</rule>
+  <rule style="Yellow">&gt;;|&gt;8</rule>
+  <rule style="Yellow">(\^FH\S)|\^FH</rule>
+  <rule style="Red">\\&amp;</rule>
+  <rule style="Green">(\^FX)[\s\S]+?(\^FS)</rule>
+</doc>

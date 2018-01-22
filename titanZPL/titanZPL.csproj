@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B9E04FD-7F33-4654-971F-722A7A375B41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>titanZPL</RootNamespace>
+    <AssemblyName>titanZPL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\..\..\code\BarcodeLib\bin\Debug\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Bytescout.BarCode">
+      <HintPath>dlls\Bytescout.BarCode.dll</HintPath>
+    </Reference>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>dlls\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\commands\base\zpl_command.cs" />
+    <Compile Include="core\commands\base\zpl_internal.cs" />
+    <Compile Include="core\commands\c_A%40.cs" />
+    <Compile Include="core\commands\c_A.cs" />
+    <Compile Include="core\commands\c_B0.cs" />
+    <Compile Include="core\commands\c_B1.cs" />
+    <Compile Include="core\commands\c_B2.cs" />
+    <Compile Include="core\commands\c_B3.cs" />
+    <Compile Include="core\commands\c_B4.cs" />
+    <Compile Include="core\commands\c_B5.cs" />
+    <Compile Include="core\commands\c_B7.cs" />
+    <Compile Include="core\commands\c_B8.cs" />
+    <Compile Include="core\commands\c_B9.cs" />
+    <Compile Include="core\commands\c_BA.cs" />
+    <Compile Include="core\commands\c_BB.cs" />
+    <Compile Include="core\commands\c_BC.cs" />
+    <Compile Include="core\commands\c_BD.cs" />
+    <Compile Include="core\commands\c_BE.cs" />
+    <Compile Include="core\commands\c_BF.cs" />
+    <Compile Include="core\commands\c_BI.cs" />
+    <Compile Include="core\commands\c_BJ.cs" />
+    <Compile Include="core\commands\c_BK.cs" />
+    <Compile Include="core\commands\c_BL.cs" />
+    <Compile Include="core\commands\c_BM.cs" />
+    <Compile Include="core\commands\c_BO.cs" />
+    <Compile Include="core\commands\c_BP.cs" />
+    <Compile Include="core\commands\c_BQ.cs" />
+    <Compile Include="core\commands\c_BR.cs" />
+    <Compile Include="core\commands\c_BS.cs" />
+    <Compile Include="core\commands\c_BT.cs" />
+    <Compile Include="core\commands\c_BU.cs" />
+    <Compile Include="core\commands\c_BX.cs" />
+    <Compile Include="core\commands\c_BY.cs" />
+    <Compile Include="core\commands\c_BZ.cs" />
+    <Compile Include="core\commands\c_CC.cs" />
+    <Compile Include="core\commands\c_CD.cs" />
+    <Compile Include="core\commands\c_CF.cs" />
+    <Compile Include="core\commands\c_CI.cs" />
+    <Compile Include="core\commands\c_CM.cs" />
+    <Compile Include="core\commands\c_CN.cs" />
+    <Compile Include="core\commands\c_CO.cs" />
+    <Compile Include="core\commands\c_CP.cs" />
+    <Compile Include="core\commands\c_CT.cs" />
+    <Compile Include="core\commands\c_CV.cs" />
+    <Compile Include="core\commands\c_CW.cs" />
+    <Compile Include="core\commands\c_DF.cs" />
+    <Compile Include="core\commands\c_FB.cs" />
+    <Compile Include="core\commands\c_FC.cs" />
+    <Compile Include="core\commands\c_FD.cs" />
+    <Compile Include="core\commands\c_FH.cs" />
+    <Compile Include="core\commands\c_FL.cs" />
+    <Compile Include="core\commands\c_FM.cs" />
+    <Compile Include="core\commands\c_FN.cs" />
+    <Compile Include="core\commands\c_FO.cs" />
+    <Compile Include="core\commands\c_FP.cs" />
+    <Compile Include="core\commands\c_FR.cs" />
+    <Compile Include="core\commands\c_FS.cs" />
+    <Compile Include="core\commands\c_FT.cs" />
+    <Compile Include="core\commands\c_FV.cs" />
+    <Compile Include="core\commands\c_FW.cs" />
+    <Compile Include="core\commands\c_FX.cs" />
+    <Compile Include="core\commands\c_GB.cs" />
+    <Compile Include="core\commands\c_GC.cs" />
+    <Compile Include="core\commands\c_GD.cs" />
+    <Compile Include="core\commands\c_GE.cs" />
+    <Compile Include="core\commands\c_GF.cs" />
+    <Compile Include="core\commands\c_GS.cs" />
+    <Compile Include="core\commands\c_HF.cs" />
+    <Compile Include="core\commands\c_HG.cs" />
+    <Compile Include="core\commands\c_HH.cs" />
+    <Compile Include="core\commands\c_HT.cs" />
+    <Compile Include="core\commands\c_HV.cs" />
+    <Compile Include="core\commands\c_HW.cs" />
+    <Compile Include="core\commands\c_HY.cs" />
+    <Compile Include="core\commands\c_HZ.cs" />
+    <Compile Include="core\commands\c_ID.cs" />
+    <Compile Include="core\commands\c_IL.cs" />
+    <Compile Include="core\commands\c_IM.cs" />
+    <Compile Include="core\commands\c_IS.cs" />
+    <Compile Include="core\commands\c_JB.cs" />
+    <Compile Include="core\commands\c_JH.cs" />
+    <Compile Include="core\commands\c_JI.cs" />
+    <Compile Include="core\commands\c_JJ.cs" />
+    <Compile Include="core\commands\c_JM.cs" />
+    <Compile Include="core\commands\c_JS.cs" />
+    <Compile Include="core\commands\c_JT.cs" />
+    <Compile Include="core\commands\c_JU.cs" />
+    <Compile Include="core\commands\c_JW.cs" />
+    <Compile Include="core\commands\c_JZ.cs" />
+    <Compile Include="core\commands\c_KD.cs" />
+    <Compile Include="core\commands\c_KL.cs" />
+    <Compile Include="core\commands\c_KN.cs" />
+    <Compile Include="core\commands\c_KP.cs" />
+    <Compile Include="core\commands\c_KV.cs" />
+    <Compile Include="core\commands\c_LF.cs" />
+    <Compile Include="core\commands\c_LH.cs" />
+    <Compile Include="core\commands\c_LL.cs" />
+    <Compile Include="core\commands\c_LR.cs" />
+    <Compile Include="core\commands\c_LS.cs" />
+    <Compile Include="core\commands\c_LT.cs" />
+    <Compile Include="core\commands\c_MA.cs" />
+    <Compile Include="core\commands\c_MC.cs" />
+    <Compile Include="core\commands\c_MD.cs" />
+    <Compile Include="core\commands\c_MF.cs" />
+    <Compile Include="core\commands\c_MI.cs" />
+    <Compile Include="core\commands\c_ML.cs" />
+    <Compile Include="core\commands\c_MM.cs" />
+    <Compile Include="core\commands\c_MN.cs" />
+    <Compile Include="core\commands\c_MP.cs" />
+    <Compile Include="core\commands\c_MT.cs" />
+    <Compile Include="core\commands\c_MU.cs" />
+    <Compile Include="core\commands\c_MW.cs" />
+    <Compile Include="core\commands\c_NC.cs" />
+    <Compile Include="core\commands\c_ND.cs" />
+    <Compile Include="core\commands\c_NI.cs" />
+    <Compile Include="core\commands\c_NS.cs" />
+    <Compile Include="core\commands\c_PA.cs" />
+    <Compile Include="core\commands\c_PF.cs" />
+    <Compile Include="core\commands\c_PH.cs" />
+    <Compile Include="core\commands\c_PM.cs" />
+    <Compile Include="core\commands\c_PN.cs" />
+    <Compile Include="core\commands\c_PO.cs" />
+    <Compile Include="core\commands\c_PP.cs" />
+    <Compile Include="core\commands\c_PQ.cs" />
+    <Compile Include="core\commands\c_PR.cs" />
+    <Compile Include="core\commands\c_PW.cs" />
+    <Compile Include="core\commands\c_SC.cs" />
+    <Compile Include="core\commands\c_SE.cs" />
+    <Compile Include="core\commands\c_SF.cs" />
+    <Compile Include="core\commands\c_SI.cs" />
+    <Compile Include="core\commands\c_SL.cs" />
+    <Compile Include="core\commands\c_SN.cs" />
+    <Compile Include="core\commands\c_SO.cs" />
+    <Compile Include="core\commands\c_SP.cs" />
+    <Compile Include="core\commands\c_SQ.cs" />
+    <Compile Include="core\commands\c_SR.cs" />
+    <Compile Include="core\commands\c_SS.cs" />
+    <Compile Include="core\commands\c_ST.cs" />
+    <Compile Include="core\commands\c_SX.cs" />
+    <Compile Include="core\commands\c_SZ.cs" />
+    <Compile Include="core\commands\c_TB.cs" />
+    <Compile Include="core\commands\c_TO.cs" />
+    <Compile Include="core\commands\c_WD.cs" />
+    <Compile Include="core\commands\c_XA.cs" />
+    <Compile Include="core\commands\c_XB.cs" />
+    <Compile Include="core\commands\c_XF.cs" />
+    <Compile Include="core\commands\c_XG.cs" />
+    <Compile Include="core\commands\c_XS.cs" />
+    <Compile Include="core\commands\c_XZ.cs" />
+    <Compile Include="core\commands\c_ZZ.cs" />
+    <Compile Include="core\commands\t_DB.cs" />
+    <Compile Include="core\commands\t_DE.cs" />
+    <Compile Include="core\commands\t_DG.cs" />
+    <Compile Include="core\commands\t_DN.cs" />
+    <Compile Include="core\commands\t_DS.cs" />
+    <Compile Include="core\commands\t_DT.cs" />
+    <Compile Include="core\commands\t_DU.cs" />
+    <Compile Include="core\commands\t_DY.cs" />
+    <Compile Include="core\commands\t_EG.cs" />
+    <Compile Include="core\commands\t_HB.cs" />
+    <Compile Include="core\commands\t_HD.cs" />
+    <Compile Include="core\commands\t_HI.cs" />
+    <Compile Include="core\commands\t_HM.cs" />
+    <Compile Include="core\commands\t_HQ.cs" />
+    <Compile Include="core\commands\t_HS.cs" />
+    <Compile Include="core\commands\t_HU.cs" />
+    <Compile Include="core\commands\t_JA.cs" />
+    <Compile Include="core\commands\t_JB.cs" />
+    <Compile Include="core\commands\t_JC.cs" />
+    <Compile Include="core\commands\t_JD.cs" />
+    <Compile Include="core\commands\t_JE.cs" />
+    <Compile Include="core\commands\t_JF.cs" />
+    <Compile Include="core\commands\t_JG.cs" />
+    <Compile Include="core\commands\t_JI.cs" />
+    <Compile Include="core\commands\t_JL.cs" />
+    <Compile Include="core\commands\t_JN.cs" />
+    <Compile Include="core\commands\t_JO.cs" />
+    <Compile Include="core\commands\t_JP.cs" />
+    <Compile Include="core\commands\t_JQ.cs" />
+    <Compile Include="core\commands\t_JR.cs" />
+    <Compile Include="core\commands\t_JS.cs" />
+    <Compile Include="core\commands\t_JX.cs" />
+    <Compile Include="core\commands\t_KB.cs" />
+    <Compile Include="core\commands\t_NC.cs" />
+    <Compile Include="core\commands\t_NR.cs" />
+    <Compile Include="core\commands\t_NT.cs" />
+    <Compile Include="core\commands\t_PL.cs" />
+    <Compile Include="core\commands\t_PR.cs" />
+    <Compile Include="core\commands\t_PS.cs" />
+    <Compile Include="core\commands\t_RO.cs" />
+    <Compile Include="core\commands\t_SD.cs" />
+    <Compile Include="core\commands\t_TA.cs" />
+    <Compile Include="core\commands\t_WC.cs" />
+    <Compile Include="core\commands\t_WQ.cs" />
+    <Compile Include="core\decoders\lz77.cs" />
+    <Compile Include="core\decoders\maxicode.cs" />
+    <Compile Include="core\decoders\zpl_RLE.cs" />
+    <Compile Include="core\logic\draw_object.cs" />
+    <Compile Include="core\ide\ide_backend.cs" />
+    <Compile Include="core\logic\build.cs" />
+    <Compile Include="core\logic\document.cs" />
+    <Compile Include="core\print.cs" />
+    <Compile Include="core\logic\label_types.cs" />
+    <Compile Include="core\zint\Enums.cs" />
+    <Compile Include="core\zint\Symbology.cs" />
+    <Compile Include="core\zint\zInt.cs" />
+    <Compile Include="core\zint\zint_symbol.cs" />
+    <Compile Include="core\_init\build_raster_fonts_from_printer.cs" />
+    <Compile Include="core\_init\printer_render.cs" />
+    <Compile Include="IDE\ide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\ide.Designer.cs">
+      <DependentUpon>ide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDE\controls\document.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\controls\document.Designer.cs">
+      <DependentUpon>document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDE\controls\info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\controls\info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDE\file_manager.cs" />
+    <Compile Include="IDE\about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="core\titanZPL.cs" />
+    <EmbeddedResource Include="IDE\ide.resx">
+      <DependentUpon>ide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\controls\document.resx">
+      <DependentUpon>document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\controls\info.resx">
+      <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="IDE\SyntaxtHighlighting.,xml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

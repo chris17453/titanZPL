@@ -1,0 +1,224 @@
+/*****************************************************************************
+*       ████████╗██╗████████╗ █████╗ ███╗   ██╗███████╗██████╗ ██╗           *
+*       ╚══██╔══╝██║╚══██╔══╝██╔══██╗████╗  ██║╚══███╔╝██╔══██╗██║           *
+*          ██║   ██║   ██║   ███████║██╔██╗ ██║  ███╔╝ ██████╔╝██║           *
+*          ██║   ██║   ██║   ██╔══██║██║╚██╗██║ ███╔╝  ██╔═══╝ ██║           *
+*          ██║   ██║   ██║   ██║  ██║██║ ╚████║███████╗██║     ███████╗      *
+*          ╚═╝   ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝     ╚══════╝      *
+******************************************************************************
+*      Created By: Charles Watkins                                           *
+*      Date      : 2017-10-12                                                *
+*****************************************************************************/
+using System;
+using System.Collections.Generic;
+namespace titanZPL.commands  {
+    public class zpl_cmd_c_CI : zpl_command{   //Change International Font/Encoding
+        public string desired_character_set_note                                   = String.Empty;
+        public string s1                                                           = String.Empty;
+        public string d1                                                           = String.Empty;
+        public string s2                                                           = String.Empty;
+        public string d2                                                           = String.Empty;
+                                        
+        public zpl_cmd_c_CI(string data,List<zpl_command> commands):base(commands){                    
+            cmd        ="^CI";                   
+            description="Change International Font/Encoding";                   
+            data_format="a,s1,d1,s2,d2,,,, ";                   
+            example    ="^XA"+
+			            "^CI0,21,36"+
+			            "^FO100,200^A0N50,50^FD$0123^FS"+
+			            "^XZ";                   
+            desired_character_set_note                                  =(string)argument(0,data,"s","                   ",""," ");
+            s1                                                          =(string)argument(1,data,"s","                   ",""," ");
+            d1                                                          =(string)argument(2,data,"s","                   ",""," ");
+            s2                                                          =(string)argument(3,data,"s","                   ",""," ");
+            d2                                                          =(string)argument(4,data,"s","                   ",""," ");
+                                    
+  /*************************************************  
+	
+a =desired_character_set_Note // //-
+                                       
+  **************************************************/ 
+            manual=""+ 
+			"^CI – Change International Font/Encoding "+ 
+			"Zebra printers can print fonts using international character sets: U.S.A.1, U.S.A.2, UK, Holland, "+ 
+			"Denmark/Norway, Sweden/Finland, Germany, France 1, France 2, Italy, Spain, and several other "+ 
+			"sets, including the Unicode character set. "+ 
+			"The "+ 
+			"^CI command enables you to call up the international character set you want to use for printing. "+ 
+			"You can mix character sets on a label. "+ 
+			"A character within a font can be remapped to a different numerical position. "+ 
+			"Format: ^CIa,s1,d1,s2,d2,... "+ 
+			"In x.14 version of firmware and later, this command allows character remapping when "+ 
+			"parameter "+ 
+			"a = 0-13. "+ 
+			"Parameters Details "+ 
+			"a = desired character "+ 
+			"set "+ 
+			"Note • These "+ 
+			"parameters are only "+ 
+			"valid when "+ 
+			"parameter "+ 
+			"a = 1 - 13 "+ 
+			"Accepted values are 0 - 12 are Zebra Code Page 850 with specific character "+ 
+			"replacements. For details, see International Character Sets on page 131 and/or "+ 
+			"Zebra Code Page 850 — Latin Character Set on page 1265. "+ 
+			"Values: "+ 
+			"0 = Single Byte Encoding - U.S.A. 1 Character Set "+ 
+			"1 = Single Byte Encoding - U.S.A. 2 Character Set "+ 
+			"2 = Single Byte Encoding - U.K. Character Set "+ 
+			"3 = Single Byte Encoding - Holland Character Set "+ 
+			"4 = Single Byte Encoding - Denmark/Norway Character Set "+ 
+			"5 = Single Byte Encoding - Sweden/Finland Character Set "+ 
+			"6 = Single Byte Encoding - Germany Character Set "+ 
+			"7 = Single Byte Encoding - France 1 Character Set "+ 
+			"8 = Single Byte Encoding - France 2 Character Set "+ 
+			"9 = Single Byte Encoding - Italy Character Set "+ 
+			"10 = Single Byte Encoding - Spain Character Set "+ 
+			"(parameter details continued on next page) "+ 
+			"c. The encoding is controlled by the conversion table (*.DAT). The correct table must be present for the conversion to "+ 
+			"function. The table generated by ZTools™ is the TrueType fonts internal encoding (Unicode). "+ 
+			"d. Shift-JIS encoding converts Shift-JIS to JIS and then looks up the JIS conversion in "+ 
+			"JIS.DAT. This table must be present for "+ 
+			"Shift-JIS to function. "+ 
+			"e. Supports ASCII transparency for Asian encodings. 7F and less are treated as single byte characters. 80 to FE is treated as the "+ 
+			"first byte of a 2 byte character 8000 to FEFF in the encoding table for Unicode. "+ 
+			"f. The ^CI17 command has been deprecated, along with the ^F8 and ^F16 commands that are required for the ^CI17 "+ 
+			"command to function. The recommended replacement is the "+ 
+			"^CI28-30 commands. "+ 
+			" "+ 
+			"ZPL Commands "+ 
+			"^CI "+ 
+			"130 "+ 
+			"P1012728-011 Zebra Programming Guide 11/21/16 "+ 
+			"a = desired character "+ 
+			"set "+ 
+			"(continued) "+ 
+			"Values 28 to 30 are only "+ 
+			"supported in firmware "+ 
+			"version V60.14.x, V50.14.x, "+ 
+			"or later. "+ 
+			"Values 31 to 36 are only "+ 
+			"supported in firmware "+ 
+			"version x.16.x or later. "+ 
+			"11 = Single Byte Encoding - Miscellaneous Character Set "+ 
+			"12 = Single Byte Encoding - Japan (ASCII with Yen symbol) Character Set "+ 
+			"13 = Zebra Code Page 850 (see page 1265) "+ 
+			"14 = Double Byte Asian Encodings "+ 
+			"c "+ 
+			"15 = Shift-JIS "+ 
+			"d "+ 
+			"16 = EUC-JP and EUC-CN "+ 
+			"c "+ 
+			"17 = Deprecated - UCS-2 Big Endian "+ 
+			"f "+ 
+			"18 to 23 = Reserved "+ 
+			"24 = Single Byte Asian Encodings "+ 
+			"c "+ 
+			"25 = Reserved "+ 
+			"26 = Multibyte Asian Encodings with ASCII Transparency "+ 
+			"c "+ 
+			"and "+ 
+			"e "+ 
+			"27 = Zebra Code Page 1252 (see page 1270) "+ 
+			"28 = Unicode (UTF-8 encoding) - Unicode Character Set "+ 
+			"29 = Unicode (UTF-16 Big-Endian encoding) - Unicode Character Set "+ 
+			"30 = Unicode (UTF-16 Little-Endian encoding) - Unicode Character Set "+ 
+			"31 = Zebra Code Page 1250 (see page 1268) is supported for scalable "+ 
+			"fonts, such as Font 0, or a downloaded TrueType font. Bitmapped "+ 
+			"fonts (including fonts A-H) do not fully support Zebra Code Page "+ 
+			"1250. This value is supported only on Zebra G-Series™ printers. "+ 
+			"33 = Code Page 1251 "+ 
+			"34 = Code page 1253 "+ 
+			"35 = Code Page 1254 "+ 
+			"36 = Code Page 1255 "+ 
+			"Initial Value at Power Up: "+ 
+			"0 "+ 
+			"s1 = source 1 "+ 
+			"(character "+ 
+			"output image) "+ 
+			"Values: decimals 0 to 255 "+ 
+			"d1 = destination 1 "+ 
+			"(character "+ 
+			"input) "+ 
+			"Values: decimals 0 to 255 "+ 
+			"s2 = source 2 "+ 
+			"(character "+ 
+			"output image) "+ 
+			"Values: decimals 0 to 255 "+ 
+			"d2 = destination 2 "+ 
+			"(character "+ 
+			"input) "+ 
+			"Values: decimals 0 to 255 "+ 
+			"Parameters Details "+ 
+			"c. The encoding is controlled by the conversion table (*.DAT). The correct table must be present for the conversion to "+ 
+			"function. The table generated by ZTools™ is the TrueType fonts internal encoding (Unicode). "+ 
+			"d. Shift-JIS encoding converts Shift-JIS to JIS and then looks up the JIS conversion in "+ 
+			"JIS.DAT. This table must be present for "+ 
+			"Shift-JIS to function. "+ 
+			"e. Supports ASCII transparency for Asian encodings. 7F and less are treated as single byte characters. 80 to FE is treated as the "+ 
+			"first byte of a 2 byte character 8000 to FEFF in the encoding table for Unicode. "+ 
+			"f. The ^CI17 command has been deprecated, along with the ^F8 and ^F16 commands that are required for the ^CI17 "+ 
+			"command to function. The recommended replacement is the "+ 
+			"^CI28-30 commands. "+ 
+			" "+ 
+			"131 "+ 
+			"ZPL Commands "+ 
+			"^CI "+ 
+			"11/21/16 Zebra Programming Guide P1012728-011 "+ 
+			"The font selected determines the shape and resolution of the printed symbol. "+ 
+			"International Character Sets "+ 
+			"… = continuation of "+ 
+			"pattern "+ 
+			"Up to 256 source and destination pairs can be entered in this command. "+ 
+			"Parameters Details "+ 
+			"c. The encoding is controlled by the conversion table (*.DAT). The correct table must be present for the conversion to "+ 
+			"function. The table generated by ZTools™ is the TrueType fonts internal encoding (Unicode). "+ 
+			"d. Shift-JIS encoding converts Shift-JIS to JIS and then looks up the JIS conversion in "+ 
+			"JIS.DAT. This table must be present for "+ 
+			"Shift-JIS to function. "+ 
+			"e. Supports ASCII transparency for Asian encodings. 7F and less are treated as single byte characters. 80 to FE is treated as the "+ 
+			"first byte of a 2 byte character 8000 to FEFF in the encoding table for Unicode. "+ 
+			"f. The ^CI17 command has been deprecated, along with the ^F8 and ^F16 commands that are required for the ^CI17 "+ 
+			"command to function. The recommended replacement is the "+ 
+			"^CI28-30 commands. "+ 
+			"80 to FF could mean quad byte in GB18030. The ^CI26 command can also be used to "+ 
+			"support the GB 18030 and Big5 HKSCS encodings. The GB 18030 uses the "+ 
+			"GB18030.DAT "+ 
+			"encoding table and BIG5 HKSCS uses the "+ 
+			"BIG5HK.DAT encoding table. "+ 
+			"The ^CI17 command has been deprecated, along with the ^F8 and ^F16 commands that are "+ 
+			"required for the "+ 
+			"^CI17 command to function. The recommended replacement is the ^CI28-30 "+ 
+			"commands. "+ 
+			"We recommend that a ^CI command (or Unicode BOM) is included at the beginning of each "+ 
+			"ZPL script. This is important when ZPL scripts with different encodings are being sent to a "+ 
+			"single printer. To assist in the interleaving of encoding schemes, the printer maintains two "+ 
+			"encoding states ( "+ 
+			"^CI0 - 28 and ^CI29 - 30). It automatically acknowledges when it should "+ 
+			"switch encoding states, allowing it to distinguish between encodings, and maintains a "+ 
+			"^CI "+ 
+			"for each, but endianess is shared. "+ 
+			"Example: This example remaps the Euro symbol (21) decimal to the dollar sign value (36) decimal. "+ 
+			"When the dollar sign character is sent to the printer, the Euro symbol prints: "+ 
+			"^XA "+ 
+			"^CI0,21,36 "+ 
+			"^FO100,200^A0N50,50^FD$0123^FS "+ 
+			"^XZ "+ 
+			"ZPL II CODE "+ 
+			"GENERATED LABEL "+ 
+			" "+ 
+			"ZPL Commands "+ 
+			"^CI "+ 
+			"132 "+ 
+			"P1012728-011 Zebra Programming Guide 11/21/16 "+ 
+			"Comments The space character cannot be remapped for any font. "+ 
+			"Note • "+ 
+			"^CI 13 = US keyboard "+ 
+			" "+ 
+			"133 "+ 
+			"ZPL Commands "+ 
+			"^CM "+ 
+			"11/21/16 Zebra Programming Guide P1012728-011 ";                           
+        }//end init function                      
+    }//end class                                  
+}//end namespace                                  
